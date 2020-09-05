@@ -1,0 +1,23 @@
+---
+title: "Assignment 1"
+author: "R.Z."
+date: "5 September 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, warning=FALSE}
+library(leaflet)
+
+
+coords <-data.frame(lat = runif(500, min =51.44875 , max = 51.54875), 
+                     lng = runif(500, min = -0.4817765, max =-0.3817765))
+coords %>% leaflet() %>%  
+        addTiles() %>%
+        addMarkers(clusterOptions = markerClusterOptions())
+
+
+```
